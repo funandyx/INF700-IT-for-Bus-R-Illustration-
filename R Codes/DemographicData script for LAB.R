@@ -34,7 +34,7 @@ print( table )
 
 
 #To do some basic BarPlots in R
-nums <- sample( 1:6, 30, replace=TRUE )
+nums <- sample( 1:6, 30, replace=TRUE ) [#https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/sample]
 print( nums )
 library( ggplot2 )
 qplot( nums, geom="bar",
