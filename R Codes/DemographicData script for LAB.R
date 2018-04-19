@@ -1,16 +1,16 @@
 #Download data from canvas (DemographicData.csv)
 
-#Load library with packages
+#---------Load library with packages
 lapply(.packages(all.available = TRUE), function(xx) library(xx,     character.only = TRUE))
 
-#My First Variable in R
+#---------My First Variable in R
 # In R, you can create a variable using <- or = sign. Once we create a variable, you no longer get the output directly (like calculator), unless you call the variable in the next line. Remember, variables can be alphabets, alphanumeric but not numeric. You can’t create numeric variables.
 name <- "Username"
 name <- "Andrew"
 print( name )
 
 
-#Understanding DataTypes in R
+#---------Understanding DataTypes in R
 #R has various type of ‘data types’ which includes vector (numeric, integer etc), matrices, data frames and list.
 # When objects of different classes are mixed in a list, coercion occurs.
 
@@ -40,15 +40,15 @@ attributes(my_matrix) # extract attributes of matrix
 #Join two vectors: You can also join two vectors using cbind() and rbind() functions. But, make sure that both vectors have same number of elements. If not, it will return NA values.
 x <- c(1, 2, 3, 4, 5, 6)
 y <- c(20, 30, 40, 50, 60)
-cbind(x, y)
-xy
-class(cbind(x, y)) # To check the class 
+z <- cbind(x, y)
+z
+class(cbind(z)) # To check the class 
        
 #Dataframe: In a matrix, every element must have the same class. But, in a data frame, you can put a list of vectors containing different classes.
 df <- data.frame(name = c("ash","jane","paul","mark"), score = c(67,56,87,91))
 df      
        
-#Data Types Examples   
+#Some More Data Types Examples   
 title <- "R for Data Analysis"
 result <- paste( "Type of title:", typeof( title ) )
 print( result )
@@ -60,7 +60,7 @@ flag <- T
 print( paste( "Is flag logical:", is.logical( flag ) ) )
        
 
-#Basic Computations in R
+#-----------Basic Computations in R
 #R console can be used as an interactive calculator too. Type the following in your console:
 2+3
 6/ 3
@@ -68,7 +68,7 @@ print( paste( "Is flag logical:", is.logical( flag ) ) )
 log(12)
 sqrt(121)
 
-#CREATING A TABLE IN R & CHANGING ROWS AND COLUMN NAMES
+#-----------CREATING A TABLE IN R & CHANGING ROWS AND COLUMN NAMES
 Tallinn <- c( 3.8, 5.5, 9.9, 15.7, 21.5, 26.3 )
 Tartu <- c( 19.5, 19.4, 19.7, 20.8, 21.3, 22.7 )
 Parnu <- c( 13.7, 15.4, 20.0, 24.6, 28.5, 32.7)
@@ -80,7 +80,7 @@ colnames( table ) <- month.abb[ 1:6 ]
 print( table )
 
 
-#To do some basic BarPlots in R
+#-----------To do some basic BarPlots in R
 nums <- sample( 1:6, 30, replace=TRUE ) [#https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/sample] [http://www.rexamples.com/14/Sample()]
 print( nums )
 library( ggplot2 )
@@ -93,7 +93,7 @@ qplot( nums, geom="bar",
 ) + scale_x_continuous( breaks = 1:6, 
                         labels=c("Monika", "Camille", "Martin", "Sirli", "Trisha", "Gee" ) )
 
-#Useful R Packages
+#-----------Some Useful R Packages
 #Some of the most powerful and commonly used packages in predictive modeling 
 #Importing Data: in any format such as .txt, .csv, .json, .sql etc. install and use 
 data.table, readr, RMySQL, sqldf, jasonlite.
@@ -108,7 +108,7 @@ caret
 
        
        
-#GETTING STARTED WITH ASSIGNMENT DATASET IN R
+#----------GETTING STARTED WITH ASSIGNMENT DATASET IN R
 
 #Method 1: Select the file manually
 
