@@ -64,6 +64,7 @@ setwd("C:/Users/funan/Desktop/SRC")
 setwd("C:\\Users\\funan\\Desktop\\SRC")
 
 #Mac
+setwd("/Users/funan/Documents/Documents - Andrew’s MacBook Pro/HP Migrated/SRC") #This worked for me
 setwd("\Users\funan\Desktop\SRC")
 getwd()
 rm(stats)
