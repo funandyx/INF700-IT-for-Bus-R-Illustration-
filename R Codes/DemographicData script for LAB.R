@@ -4,12 +4,51 @@
 lapply(.packages(all.available = TRUE), function(xx) library(xx,     character.only = TRUE))
 
 #My First Variable in R
+# In R, you can create a variable using <- or = sign. Once we create a variable, you no longer get the output directly (like calculator), unless you call the variable in the next line. Remember, variables can be alphabets, alphanumeric but not numeric. You can’t create numeric variables.
 name <- "Username"
 name <- "Andrew"
 print( name )
 
 
 #Understanding DataTypes in R
+#R has various type of ‘data types’ which includes vector (numeric, integer etc), matrices, data frames and list.
+# When objects of different classes are mixed in a list, coercion occurs.
+
+qt <- c("Time", 24, "October", TRUE, 3.33) #character
+ab <- c(TRUE, 24) #numeric
+cd <- c(2.5, "May") #character
+       
+#To check the class of any object, use class(“vector name”) function.
+class(qt)
+       
+#Similarly, you can change the class of any vector. To convert the class of a vector, you can use as. command.
+bar <- 0:5
+class(bar) #Integer
+as.numeric(bar)
+class(bar) #Numeric
+       
+# List: A list is a special type of vector which contain elements of different data types. 
+my_list <- list(22, "ab", TRUE, 1 + 2i)
+my_list
+       
+#Matrices: When a vector is introduced with row and column i.e. a dimension attribute, it becomes a matrix. 
+my_matrix <- matrix(1:6, nrow=3, ncol=2)
+my_matrix 
+dim(my_matrix) # extract dimension of matrix
+attributes(my_matrix) # extract attributes of matrix
+       
+#Join two vectors: You can also join two vectors using cbind() and rbind() functions. But, make sure that both vectors have same number of elements. If not, it will return NA values.
+x <- c(1, 2, 3, 4, 5, 6)
+y <- c(20, 30, 40, 50, 60)
+cbind(x, y)
+xy
+class(cbind(x, y)) # To check the class 
+       
+#Dataframe: In a matrix, every element must have the same class. But, in a data frame, you can put a list of vectors containing different classes.
+df <- data.frame(name = c("ash","jane","paul","mark"), score = c(67,56,87,91))
+df      
+       
+#Data Types Examples   
 title <- "R for Data Analysis"
 result <- paste( "Type of title:", typeof( title ) )
 print( result )
@@ -19,7 +58,15 @@ print( paste( "Type of pi:", typeof( pi ) ) )
 print( paste( "Type of dozen:", typeof( dozen ) ) )
 flag <- T
 print( paste( "Is flag logical:", is.logical( flag ) ) )
+       
 
+#Basic Computations in R
+#R console can be used as an interactive calculator too. Type the following in your console:
+2+3
+6/ 3
+(3*8)/(2*3)
+log(12)
+sqrt(121)
 
 #CREATING A TABLE IN R & CHANGING ROWS AND COLUMN NAMES
 Tallinn <- c( 3.8, 5.5, 9.9, 15.7, 21.5, 26.3 )
@@ -46,7 +93,21 @@ qplot( nums, geom="bar",
 ) + scale_x_continuous( breaks = 1:6, 
                         labels=c("Monika", "Camille", "Martin", "Sirli", "Trisha", "Gee" ) )
 
+#Useful R Packages
+#Some of the most powerful and commonly used packages in predictive modeling 
+#Importing Data: in any format such as .txt, .csv, .json, .sql etc. install and use 
+data.table, readr, RMySQL, sqldf, jasonlite.
+# Data Visualization:  install 
+ggplot2.
+#Data Manipulation:  These packages are 
+dplyr, plyr, tidyr, lubricate, stringr. 
+#Modeling / Machine Learning: For modeling, install packages algorithms wise such as 
+randomForest, rpart, gbm etc
+caret
 
+
+       
+       
 #GETTING STARTED WITH ASSIGNMENT DATASET IN R
 
 #Method 1: Select the file manually
