@@ -24,8 +24,8 @@ class(qt)
 #Similarly, you can change the class of any vector. To convert the class of a vector, you can use as. command.
 bar <- 0:5
 class(bar) #Integer
-as.numeric(bar)
-class(bar) #Numeric
+as.character(bar)
+class(bar) #R converts all values into character objects
        
 # List: A list is a special type of vector which contain elements of different data types. 
 my_list <- list(22, "ab", TRUE, 1 + 2i)
